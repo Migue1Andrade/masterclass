@@ -1,0 +1,17 @@
+<section ng-controller="PageController">    
+    <nav>
+        <div class="nav-div">
+            <img src="../img/logo.png" alt="" class="logo">
+            <input type="text" class="search-input" placeholder="search">
+            <i class="fa-regular fa-pen-to-square logo write-icon"></i>
+            <span class="write-icon-text">write</span>
+            <i class="fa-regular fa-bell bell-icon"></i>
+            <i class="fa-regular fa-user profile-icon" ng-click="toggleSelect()"></i>
+            <ul ng-show="isSelectVisible" class="select-dropdown">
+                <li ng-repeat="option in options" ng-click="selectOption(option)">
+                    <i ng-if="option === 'sign out'" class="fa-solid fa-right-from-bracket"></i> {{ option }}
+                </li>
+            </ul>
+        </div>
+    </nav>
+</section>
