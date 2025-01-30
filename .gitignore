@@ -130,7 +130,7 @@ dist
 .pnp.*
 yarn.lock
 .sequelizerc
-client/node_modules
+# client/node_modules
 client/package.json
 client/package-lock.json
 task
