@@ -3,13 +3,15 @@
 		<nav>
 			<div class="nav-div">
 				<img src="../img/logo.png" alt="" class="logo">
-				<input type="text" class="search-input" placeholder="search">
-				<i class="fa-regular fa-pen-to-square logo write-icon"></i>
-				<span class="write-icon-text">write</span>
+				<input type="text" class="search-input" placeholder="search" ng-model="searchText">
+                <span class="be-pointer" ng-click="openModal($event)">
+                    <i class="fa-regular fa-pen-to-square logo write-icon"></i>
+				    <span class="write-icon-text">write</span>
+                </span>
 				<i class="fa-regular fa-bell bell-icon"></i>
-				<i class="fa-regular fa-user profile-icon" ng-click="toggleSelect()"></i>
+				<i class="fa-regular fa-user profile-icon be-pointer" ng-click="toggleSelect($event)"></i>
 				<ul ng-show="isSelectVisible" class="select-dropdown">
-					<li ng-repeat="option in options" ng-click="selectOption(option)">
+					<li ng-repeat="option in options" ng-click="selectOption(option, $event)">
 						<i ng-if="option === 'sign out'" class="fa-solid fa-right-from-bracket"></i> {{ option }}
 					</li>
 				</ul>
@@ -22,20 +24,20 @@
 		<span class="post-header-elements">Following</span>
 	</div>
 	<div class="post-div">
-		<div ng-repeat="post in posts" class="post">
+		<div ng-repeat="post in posts | filter: searchText" ng-click="goPage(post.id)" class="post">
 			<span class="post-profile">
-				<img src={{post.profileImage}} alt="" class="profile-image">
+				<img src="{{post.profileImage}}" alt="" class="profile-image">
 				<span>{{post.name}}</span>
-				<!-- <pre>{{post}}</pre> -->
 			</span>
 			<h3>{{post.title}}</h3>
 			<h5>{{post.summary}}</h5>
+
 			<span>
 				<span class="date">
 					{{post.post_at}}
 				</span>
 				<span class="likes">
-					<i class="fa-regular fa-heart"></i>
+					<i class="fa-regular fa-heart be-pointer" ng-click="like(post.id, $event)"></i>
 					{{post.post_likes}}
 				</span>
 				<span>
@@ -44,10 +46,15 @@
 				</span>
 			</span>
 			<span class="post-footer-right">
-				<i class="fa-regular fa-trash-can trash be-pointer" ng-click="removePost(post.id)"></i>				
-				<i class="fa-regular fa-bookmark save"></i>
-				<i class="fa-solid fa-ellipsis-vertical ellipsis"></i>
-			</span>
+                <i class="fa-regular fa-trash-can trash be-pointer" ng-click="removePost(post.id, $event)"></i>
+                <i class="fa-regular fa-bookmark save"></i>
+                <i class="fa-solid fa-ellipsis-vertical ellipsis be-pointer" ng-click="toggleEdit(post.id, $event)"></i>
+                <ul ng-show="isEditVisible[post.id]" class="dropdown-edit" ng-style="dropdownPosition[post.id]">
+                    <li ng-click="editModal($event)">
+                        Editar
+                    </li>
+                </ul>
+            </span>
 			<span class="img-absolute">
 				<img src="{{post.postImg}}" alt="" class="post-img">
 			</span>

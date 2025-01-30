@@ -107,6 +107,7 @@ nav {
     position: absolute;
     right: 33%;
     left: 28%;
+    padding: 0;
 }
 
 h3 {
@@ -171,29 +172,92 @@ h3 {
     background-color: white;
     position: absolute;
     z-index: 1000;
-    left: 95%;
+    left: 92%;
     top: 5%;
-    width: 80px;
-}
-
-.select-dropdown li {
-    padding: 10px;
-    cursor: pointer;
-    display: flex;
+    width: 150px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Para suavizar bordas */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scale(0.9);
     text-align: center;
-    align-items: center;
-    color: black;
-}
-
-.select-dropdown li:hover {
-    background-color: #f0f0f0;
-}
-
-.select-dropdown i {
-    margin-right: 10px;
-    color: #007bff;
 }
 
 .be-pointer {
     cursor: pointer;
+}
+
+.select-dropdown.show {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.select-dropdown li {
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    color: #333;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.select-dropdown li:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.select-dropdown i {
+    margin-right: 8px;
+    color: #007bff;
+    text-align: center;
+}
+
+.dropdown-edit {
+    position: absolute;
+    left: 92%;
+    top: 10%;    
+    margin-top: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 5px 0;
+    width: 100px;
+    z-index: 100;
+}
+
+.dropdown-edit li {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+.dropdown-edit li:hover {
+    background: #f5f5f5;
+}
+
+.drop-zone {
+    border: 2px dashed #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+.drop-zone.highlight {
+    border-color: #4285f4;
+    background-color: #e8f0fe;
+}
+
+#current-img {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+}
+
+.margin-botton {
+    margin-bottom: 10px;
 }

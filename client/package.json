@@ -13,9 +13,15 @@
   "description": "",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
+    "angular-bootstrap": "^0.12.2",
+    "bootstrap": "^5.3.3",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
-    "sequelize": "^6.37.5"
+    "mysql2": "^3.12.0",
+    "pg": "^8.13.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.5",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "sequelize-cli": "^6.6.2"

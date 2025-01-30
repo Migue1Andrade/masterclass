@@ -18,7 +18,7 @@ myApp.controller('RegisterController', function($scope, $http, $location) {
 		const confirmPassword = $scope.user.confirmPassword;
 
 		if (password === confirmPassword) {
-			$http.post('http://localhost:3000/user/create', { name, password, email })
+			$http.post('http://localhost:3000/api/user/create', { name, password, email })
 				.then(function() {
 				
 					$scope.successMessage = 'Cadastro realizado com sucesso!';

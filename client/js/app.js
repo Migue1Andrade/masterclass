@@ -27,6 +27,19 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/home/page',
             templateUrl: 'views/page.html',
             controller: 'PageController',
+        })
+        .state('modal', {
+            templateUrl: 'views/modal.html',
+            controller: 'ModalPost'
+        })
+        .state('editModal', {
+            templateUrl: 'views/EditPostModal.html',
+            controller: 'EditPostModalController'
+        })
+        .state('profile', {
+            url: '/home/profile',
+            templateUrl: 'views/profile.html',
+            controller: 'ProfileController'
         });
 });
 
