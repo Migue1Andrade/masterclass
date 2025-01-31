@@ -30,16 +30,19 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('modal', {
             templateUrl: 'views/modal.html',
-            controller: 'ModalPost'
+            controller: 'ModalPost',
+            onEnter: isAuthorized
         })
         .state('editModal', {
             templateUrl: 'views/EditPostModal.html',
-            controller: 'EditPostModalController'
+            controller: 'EditPostModalController',
+            onEnter: isAuthorized
         })
         .state('profile', {
             url: '/home/profile',
             templateUrl: 'views/profile.html',
-            controller: 'ProfileController'
+            controller: 'ProfileController',
+            onEnter: isAuthorized
         });
 });
 
