@@ -1,8 +1,6 @@
 /* eslint-disable no-undef */
 const myApp = angular.module("mediumApp", ['ui.router', 'ui.bootstrap']);
-const baseUrl = 'http://localhost:8080';
-
-console.log(myApp, 'myApp')
+const baseUrl = 'http://localhost:8080/public';
 
 myApp.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/login');
@@ -42,16 +40,13 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/home/profile',
             templateUrl: 'views/profile.html',
             controller: 'ProfileController',
-            onEnter: isAuthorized
         });
 });
 
 const isAuthorized = ($state, $rootScope) => {
     const isLogged = localStorage.getItem("token");
-    console.log("Verificando autorização - Token:", isLogged);
-    if (!isLogged) {
-        $state.go('login');
-        return;
-    }
+
+    if (!isLogged) { $state.go('login'); return }
+    
     $rootScope.isLogged = true;
 };

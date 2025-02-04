@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "http-server ./ localhost -p 8080 -c-l",
+    "start": "http-server ./ public -p 8080 -c-l",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
