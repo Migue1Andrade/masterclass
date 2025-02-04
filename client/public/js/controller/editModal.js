@@ -1,4 +1,4 @@
-myApp.controller('EditPostModalController', ['$scope', '$uibModalInstance', 'EditPostService', 
+myApp.controller('EditPostModalController', ['$scope', '$uibModalInstance', 'EditPostService',
 	function($scope, $uibModalInstance, EditPostService) {
 		const postId = localStorage.getItem('postId');
 
@@ -21,7 +21,6 @@ myApp.controller('EditPostModalController', ['$scope', '$uibModalInstance', 'Edi
 			localStorage.removeItem('postId');
 		};
 
-		// Buscar os dados do post usando o service
 		EditPostService.getPost(postId)
 			.then(function(response) {
 				const post = response.data;

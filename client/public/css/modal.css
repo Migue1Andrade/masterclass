@@ -1,10 +1,10 @@
 .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 50px auto;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	max-width: 600px;
+	margin: 50px auto;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .modal-header {
@@ -33,33 +33,33 @@
 }
 
 .fade:not(.show) {
-    opacity: 1;
+	opacity: 1;
 }
 
 .modal-backdrop {
-    background-color: rgba(0, 0, 0, 0);
+	background-color: rgba(0, 0, 0, 0);
 }
 
 .modal-backdrop.in {
-    background-color: rgba(0, 0, 0, 0);
+	background-color: rgba(0, 0, 0, 0);
 }
 
 .drop-zone {
-    border: 2px dashed #ccc;
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
+	border: 2px dashed #ccc;
+	padding: 20px;
+	text-align: center;
+	cursor: pointer;
 }
-  
+
 .drop-zone.highlight {
-    border-color: #09f;
+	border-color: #09f;
 }
 
 .url {
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 50%;
-    margin-left: 25%;
+	margin-top: 10px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 50%;
+	margin-left: 25%;
 }

@@ -1,19 +1,10 @@
-myApp.controller('HomeController', ['$scope', '$location', '$window', 'PostService', 
+myApp.controller('HomeController', ['$scope', '$location', '$window', 'PostService',
 	function($scope, $location, $window, PostService) {
 		$scope.isEditVisible = {};
 		$scope.dropdownPosition = {};
-		$scope.options = ["profile", "oi", "sign out"];
-
 
 		angular.element(document.querySelector('.modal-backdrop')).remove();
 		angular.element(document.querySelector('.modal')).remove();
-
-		$scope.openModal = function(event) {
-			event.stopPropagation();
-			PostService.openPostModal()
-				.then(() => $window.location.reload())
-				.catch(reason => console.log('Modal rejeitado:', reason));
-		};
 
 		$scope.like = function(postId, event) {
 			event.stopPropagation();
@@ -49,20 +40,6 @@ myApp.controller('HomeController', ['$scope', '$location', '$window', 'PostServi
 		$scope.selectPtionEdit = function(option, postId) {
 			$scope.isEditVisible[postId] = false;
 			if (option === "edit") $scope.editModal(postId);
-		};
-
-		$scope.selectOption = function(option, event) {
-			event.stopPropagation();
-			$scope.isSelectVisible = false;
-
-			if (option === "sign out") PostService.logout();
-			else if (option === "profile") $location.path('/home/profile')
-			
-		};
-
-		$scope.toggleSelect = function(event) {
-			event.stopPropagation();
-			$scope.isSelectVisible = !$scope.isSelectVisible;
 		};
 
 		$scope.removePost = function(postId, event) {

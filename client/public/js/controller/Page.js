@@ -77,7 +77,6 @@ myApp.controller('PageController', ['$scope', '$location', 'PageService',
 					console.error('Erro ao buscar dados do post:', error);
 				});
 		};
-
 		$scope.reload();
 	}
 ]);
